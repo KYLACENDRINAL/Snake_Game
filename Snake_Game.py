@@ -83,6 +83,19 @@ wn.onkeypress(go_right, "d")
 while True:
     wn.update()
 
+    # Check the collision with the border
+    if head.xcor()>290 or head.xcor()<-290 or head.ycor()>290 or head.ycor()<-290:
+        time.sleep(1)
+        head.goto(0,0)
+        head.direction = "stop"
+
+        # Hide the segments
+        for segment in segments:
+            segment.goto(1000, 1000)
+        
+        # Clear the segments list
+        segments.clear()
+
     # Check collision with the food
     if head.distance(food) < 20:
         # Move the food to a random spot
@@ -112,14 +125,14 @@ while True:
 
 
 
+
+
     move()
     time.sleep(delay)
 
 
 wn.mainloop()
 
-
-# Check the collision with the border
 # Check the collision with body segments
 # Set up the score
 # Create the level
