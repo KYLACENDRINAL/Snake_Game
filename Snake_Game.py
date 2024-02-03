@@ -24,6 +24,15 @@ head.penup()
 head.goto(0,0)
 head.direction = "stop"
 
+# Create the snake food
+food = turtle.Turtle()
+food.speed(0)
+food.shape("square")
+food.color("red")
+food.penup()
+food.goto(0, 100)
+
+
 # Define the function to move the snake head
 def go_up():
     if head.direction != "down":
@@ -80,7 +89,6 @@ wn.mainloop()
 
 
 
-# Create the snake food
 # Check collision with the food
 # Create the segments
 # Check the collision with the border
