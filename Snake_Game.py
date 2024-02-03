@@ -35,6 +35,16 @@ food.goto(0, 100)
 
 segments = []
 
+# Displaying the score, highest score and level
+pen = turtle.Turtle()
+pen.speed(0)
+pen.shape("square")
+pen.color("black")
+pen.penup()
+pen.hideturtle()
+pen.goto(0, 260)
+pen.write("Score: 0        High Score: 0        Level: 1", align="center", font=("Georgia", 16, "normal"))
+
 
 # Define the function to move the snake head
 def go_up():
