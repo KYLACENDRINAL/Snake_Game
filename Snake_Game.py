@@ -5,6 +5,7 @@
 # Set up the screen
 import turtle
 import time
+import random
 
 delay = 0.1
 
@@ -80,6 +81,13 @@ wn.onkeypress(go_right, "d")
 while True:
     wn.update()
 
+    # Check collision with the food
+    if head.distance(food) < 20:
+        # Move the food to a random spot
+        x = random.randint(-290, 290)
+        y = random.randint(-290, 290)
+        food.goto(x,y)
+
     move()
     time.sleep(delay)
 
@@ -88,8 +96,6 @@ wn.mainloop()
 
 
 
-
-# Check collision with the food
 # Create the segments
 # Check the collision with the border
 # Check the collision with body segments
