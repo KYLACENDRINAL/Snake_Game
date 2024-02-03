@@ -9,6 +9,10 @@ import random
 
 delay = 0.1
 
+# Score
+score = 0
+high_score = 0
+
 wn = turtle.Screen()
 wn.title("Snake Game by Kyla Endrinal")
 wn.bgcolor("pink")
@@ -43,7 +47,7 @@ pen.color("black")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Score: 0        High Score: 0        Level: 1", align="center", font=("Georgia", 16, "normal"))
+pen.write("Score: 0        High Score: 0", align="center", font=("Georgia", 16, "normal"))
 
 
 # Define the function to move the snake head
@@ -106,6 +110,16 @@ while True:
         # Clear the segments list
         segments.clear()
 
+        # Reset the score
+        score = 0
+
+        # Reset the score
+        score = 0
+
+        pen.clear()
+        pen.write("Score: {}        High Score: {}".format(score, high_score), align="center", font=("Georgia", 16, "normal"))
+
+
     # Check collision with the food
     if head.distance(food) < 20:
         # Move the food to a random spot
@@ -120,6 +134,19 @@ while True:
         new_segment.color("red")
         new_segment.penup()
         segments.append(new_segment)
+
+        # Shorten the delay
+        delay -= 0.001
+
+       # Increase the score
+        score += 10
+
+        if score > high_score:
+            high_score = score
+        
+        pen.clear()
+        pen.write("Score: {}        High Score: {}".format(score, high_score), align="center", font=("Georgia", 16, "normal"))
+
 
     # Move the end segments first in reverse order
     for index in range(len(segments)-1, 0, -1):
@@ -149,13 +176,23 @@ while True:
             # Clear the segments list
             segments.clear()
 
+            # Reset the score
+            score = 0
+
+            # Reset the score
+            score = 0
+
+            pen.clear()
+            pen.write("Score: {}        High Score: {}".format(score, high_score), align="center", font=("Georgia", 16, "normal"))
+
+
     time.sleep(delay)
 
 
 
 wn.mainloop()
 
-# Set up the score
+
 # Create the level
     
 
