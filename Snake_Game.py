@@ -8,6 +8,7 @@ import time
 import random
 
 delay = 0.1
+level = 1
 
 # Score
 score = 0
@@ -47,7 +48,7 @@ pen.color("black")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Score: 0        High Score: 0", align="center", font=("Georgia", 16, "normal"))
+pen.write("Score: 0        High Score: 0        Level: 0", align="center", font=("Georgia", 16, "normal"))
 
 
 # Define the function to move the snake head
@@ -113,11 +114,14 @@ while True:
         # Reset the score
         score = 0
 
-        # Reset the score
-        score = 0
+        # Reset the delay
+        delay = 0.1
+
+        # Reset the level
+        level = 1
 
         pen.clear()
-        pen.write("Score: {}        High Score: {}".format(score, high_score), align="center", font=("Georgia", 16, "normal"))
+        pen.write("Score: {}        High Score: {}        Level: {}".format(score, high_score, level), align="center", font=("Georgia", 16, "normal"))
 
 
     # Check collision with the food
@@ -145,7 +149,7 @@ while True:
             high_score = score
         
         pen.clear()
-        pen.write("Score: {}        High Score: {}".format(score, high_score), align="center", font=("Georgia", 16, "normal"))
+        pen.write("Score: {}        High Score: {}        Level: {}".format(score, high_score, level), align="center", font=("Georgia", 16, "normal"))
 
 
     # Move the end segments first in reverse order
@@ -179,12 +183,44 @@ while True:
             # Reset the score
             score = 0
 
-            # Reset the score
-            score = 0
+            # Reset the delay
+            delay = 0.1
+
+            # Reset the level
+            level = 1
 
             pen.clear()
-            pen.write("Score: {}        High Score: {}".format(score, high_score), align="center", font=("Georgia", 16, "normal"))
+            pen.write("Score: {}        High Score: {}        Level: {}".format(score, high_score, level), align="center", font=("Georgia", 16, "normal"))
 
+    # Create the level
+    if level == 1 and score == 100:
+        level += 1
+        delay *= 0.9
+    if level == 2 and score == 200:
+        level += 1
+        delay *= 0.9
+    if level == 3 and score == 300:
+        level += 1
+        delay *= 0.9
+    if level == 4 and score == 400:
+        level += 1
+        delay *= 0.9
+    if level == 5 and score == 500:
+        level += 1
+        delay *= 0.9
+    if level == 6 and score == 600:
+        level += 1
+    if level == 7 and score == 700:
+        level += 1
+        delay *= 0.9
+    if level == 8 and score == 800:
+        level += 1
+        delay *= 0.9
+    if level == 9 and score == 900:
+        level += 1
+        delay *= 0.9
+    if level == 10 and score == 1000:
+        level += 1
 
     time.sleep(delay)
 
@@ -193,6 +229,6 @@ while True:
 wn.mainloop()
 
 
-# Create the level
+
     
 
