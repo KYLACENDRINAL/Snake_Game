@@ -33,6 +33,8 @@ food.color("red")
 food.penup()
 food.goto(0, 100)
 
+segments = []
+
 
 # Define the function to move the snake head
 def go_up():
@@ -88,6 +90,28 @@ while True:
         y = random.randint(-290, 290)
         food.goto(x,y)
 
+        # Create the segments
+        new_segment = turtle.Turtle()
+        new_segment.speed(0)
+        new_segment.shape("circle")
+        new_segment.color("red")
+        new_segment.penup()
+        segments.append(new_segment)
+
+    # Move the end segments first in reverse order
+    for index in range(len(segments)-1, 0, -1):
+        x = segments[index-1].xcor()
+        y = segments[index-1].ycor()
+        segments[index].goto(x, y)
+
+    # Move segment 0 to where the head is
+    if len(segments) > 0:
+        x = head.xcor()
+        y = head.ycor()
+        segments[0].goto(x,y)
+
+
+
     move()
     time.sleep(delay)
 
@@ -95,8 +119,6 @@ while True:
 wn.mainloop()
 
 
-
-# Create the segments
 # Check the collision with the border
 # Check the collision with body segments
 # Set up the score
