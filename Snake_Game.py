@@ -228,6 +228,21 @@ while True:
 
 wn.mainloop()
 
+# YOUTUBE LINK REFERENCES
+#1.https://youtu.be/BP7KMlbvtOo?si=OaOCWsBnYb3N892F
+
+#2.https://youtu.be/rrOqlfMujqQ?si=xrhfvyW3QUpr09fV
+
+#3.https://youtu.be/J5yJilI-Af4?si=ViDvZFk4ux2grxAQ
+
+#4.https://youtu.be/DxVPN1PIuLM?si=TVzBZLyQRISixasR
+
+#5.https://youtu.be/VH-011awPyQ?si=PAi3Vqc_i_eJr5iI
+
+#6.https://youtu.be/duElRYWqLgY?si=sxtnUhQJwOFf1nSW
+
+#7.https://youtu.be/Vi0AhyUCCkE?si=Ay09OVZNp1mMlyqw
+
 
 
     
